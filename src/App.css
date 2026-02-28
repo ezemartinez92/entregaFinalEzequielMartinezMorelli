@@ -1,0 +1,45 @@
+/* Reset básico para que no haya márgenes extraños */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #f8f9fa; /* Un gris muy clarito para el fondo */
+  color: #333;
+}
+
+#root {
+  width: 100%; /* Ahora sí ocupa todo el ancho */
+}
+
+.main-layout {
+  display: flex;
+  flex-direction: row; /* Productos a la izquierda, carrito a la derecha */
+  gap: 30px;
+  padding: 40px 5%;
+  align-items: flex-start; /* Evita que el carrito se estire hacia abajo */
+}
+/* Grilla de productos */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  flex: 3; /* Ocupa más espacio que el carrito */
+}
+/* Ajuste para que la grilla de productos sea el área principal */
+.container {
+  flex: 3;
+}
+
+/* Ajuste para que el carrito ocupe menos espacio al costado */
+.cart-container {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  height: fit-content;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
