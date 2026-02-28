@@ -11,7 +11,6 @@ const CartItem = ({ item, onIncrease, onDecrease }) => (
       <h4>{item.nombre}</h4>
       <p className="unit-price">Precio unitario: ${item.precio.toLocaleString()}</p>
       
-      {/* REPLICANDO LA ESTRUCTURA DE ITEM DETAIL */}
       <div className="item-count-wrapper">
         <div className="qty-selector">
           <button 
@@ -68,7 +67,7 @@ const Cart = ({ cart = [], increaseQty, decreaseQty, totalPrice, clearCart }) =>
           />
         ))}
 
-        {/* BOTÓN VACIAR CARRITO CON ESTILO COHERENTE */}
+        {/* Botón vaciar carrito */}
         <div style={{ textAlign: 'right', marginTop: '20px' }}>
           <button 
             onClick={() => window.confirm("¿Vaciar todo el carrito?") && clearCart()}

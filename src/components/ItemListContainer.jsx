@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getProducts, getProductsByCategory } from '../data/asincronismo';
 
-// Componente presentacional interno para la tarjeta (puedes moverlo a Item.jsx)
+
 const Item = ({ id, nombre, img, precio }) => {
     return (
         <article className="card">

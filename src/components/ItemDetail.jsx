@@ -28,15 +28,15 @@ const ItemDetail = ({ id, nombre, precio, category, img, description, stock, add
                 
                 <div className="purchase-section">
                     {quantityAdded > 0 ? (
-                        /* CONTENEDOR DE BOTONES POST-COMPRA */
+                     
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', width: '100%' }}>
                             
-                            {/* BOTÓN ROJO (NUEVO ESTILO FINISH) */}
+                            
                             <Link to="/cart" className="btn-finish">
                                 Terminar compra
                             </Link>
 
-                            {/* BOTÓN NEGRO (ESTILO PRIMARY) */}
+                          
                             <Link to="/" className="btn-primary">
                                 Seguir comprando
                             </Link>

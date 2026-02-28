@@ -156,7 +156,7 @@ body {
   text-align: center;
 
   &:hover {
-    background-color: #ff6b81; /* Un rojo un poco más claro al pasar el mouse */
+    background-color: #ff6b81; 
     transform: translateY(-1px);
     box-shadow: var(--shadow);
   }

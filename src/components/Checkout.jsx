@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { db } from '../utils/firebase'; // Asegúrate que la ruta sea correcta
+import { db } from '../utils/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 const Checkout = ({ cart, totalPrice, clearCart }) => {
@@ -8,10 +8,10 @@ const Checkout = ({ cart, totalPrice, clearCart }) => {
         telefono: '',
         email: ''
     });
-    //
+   
     const [orderId, setOrderId] = useState(null);
 
-    // Capturamos lo que el usuario escribe
+    // Capturo lo que el usuario escribe
     const handleInputChange = (e) => {
         setUserData({
             ...userData,
@@ -22,7 +22,7 @@ const Checkout = ({ cart, totalPrice, clearCart }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Armamos el objeto de la orden
+        // Armo la orden con los datos del usuario, los items del carrito, el total y la fecha
         const order = {
             buyer: userData,
             items: cart.map(item => ({
@@ -37,14 +37,14 @@ const Checkout = ({ cart, totalPrice, clearCart }) => {
 
         try {
             const docRef = await addDoc(collection(db, "orders"), order);
-            setOrderId(docRef.id); // Guardamos el ID de Firebase
-            clearCart(); // Vaciamos el carrito de la App
+            setOrderId(docRef.id); // Guardo el ID de Firebase
+            clearCart(); // Limpio el carro
         } catch (error) {
             console.error("Error al crear la orden: ", error);
         }
     };
 
-    // Si ya hay ID, mostramos pantalla de éxito
+    // Si ya hay ID, muestro pantalla de éxito
     if (orderId) {
         return (
             <div className="detail-container" style={{flexDirection: 'column', textAlign: 'center', padding: '60px'}}>
